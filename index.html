@@ -27,14 +27,13 @@ h1 { font-family:'Space Mono',monospace; font-size:clamp(36px,8vw,64px);
 h1 span { color:var(--orange); }
 .sub { font-size:18px; color:var(--ink-mid); line-height:1.6; max-width:560px; margin-bottom:48px; }
 
-.toggle-wrap { display:flex; gap:0; margin-bottom:40px; max-width:480px; }
+.toggle-wrap { display:flex; gap:8px; margin-bottom:40px; max-width:480px; }
 .toggle-btn { flex:1; padding:16px; text-align:center; cursor:pointer;
   font-family:'Space Mono',monospace; font-size:12px; letter-spacing:2px;
   font-weight:700; border:1px solid var(--border); transition:all 0.2s;
   background:var(--surface); color:var(--ink-faint); }
 .toggle-btn.active { background:var(--orange-dim); color:var(--orange);
   border-color:var(--orange); }
-.toggle-btn:first-child { border-right:0; }
 
 .panel { display:none; animation:fadeIn 0.3s ease; }
 .panel.active { display:block; }
@@ -117,7 +116,6 @@ h1 span { color:var(--orange); }
 @media(max-width:600px) {
   .hero { padding:40px 20px; }
   .toggle-wrap { flex-direction:column; }
-  .toggle-btn:first-child { border-right:1px solid var(--border); border-bottom:0; }
   .bar-label { width:70px; font-size:10px; }
 }
 </style>
