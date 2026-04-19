@@ -16,7 +16,6 @@
   --border: #2A2420;
 }
 body { background:var(--bg); color:var(--ink); font-family:'DM Sans',sans-serif; overflow-x:hidden; }
-.mono { font-family:'Space Mono',monospace; }
 
 .hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center;
   padding:60px 24px; max-width:800px; margin:0 auto; position:relative; }
@@ -73,9 +72,20 @@ h1 span { color:var(--orange); }
   font-size:15px; transition:all 0.15s; }
 .form-row input:focus, .form-row select:focus { outline:none; border-color:var(--orange); }
 .form-row input::placeholder { color:var(--ink-faint); }
+
+.checkbox-group { display:flex; flex-wrap:wrap; gap:8px; }
+.checkbox-group label {
+  display:flex; align-items:center; gap:6px; padding:8px 14px;
+  background:var(--bg); border:1px solid var(--border); cursor:pointer;
+  font-family:'DM Sans',sans-serif; font-size:14px; color:var(--ink-mid);
+  transition:all 0.15s; letter-spacing:0; }
+.checkbox-group label:hover { border-color:var(--orange); color:var(--ink); }
+.checkbox-group input[type="checkbox"] { accent-color:var(--orange); width:16px; height:16px; cursor:pointer; }
+.checkbox-group input[type="checkbox"]:checked + span { color:var(--orange); }
+
 .submit-btn { width:100%; padding:18px; background:var(--orange); color:#000;
   font-family:'Space Mono',monospace; font-size:14px; font-weight:700;
-  letter-spacing:2px; border:none; cursor:pointer; transition:all 0.15s; }
+  letter-spacing:2px; border:none; cursor:pointer; transition:all 0.15s; margin-top:8px; }
 .submit-btn:hover:not(:disabled) { background:#FF6A3A; }
 .submit-btn:disabled { background:var(--ink-faint); cursor:not-allowed; }
 
@@ -115,7 +125,7 @@ h1 span { color:var(--orange); }
 <body>
 
 <section class="hero">
-  <div class="brand mono">NOSH</div>
+  <div class="brand">NOSH</div>
   <h1>LOWER PRICES.<br><span>BETTER DRIVER PAY.</span><br>SAME GREAT FOOD.</h1>
   <p class="sub">A new food delivery platform launching in Bushwick. Fair for restaurants. Fair for drivers. Fair prices for you.</p>
 
@@ -124,6 +134,7 @@ h1 span { color:var(--orange); }
     <div class="toggle-btn" onclick="switchTab('restaurant')" id="tab-restaurant">🍽 I'M A RESTAURANT</div>
   </div>
 
+  <!-- DRIVER PANEL -->
   <div class="panel active" id="panel-driver">
     <div class="props">
       <div class="prop">
@@ -150,7 +161,7 @@ h1 span { color:var(--orange); }
     </div>
 
     <div class="compare">
-      <div class="compare-title mono">ON $2K/MONTH IN DELIVERIES</div>
+      <div class="compare-title">ON $2K/MONTH IN DELIVERIES</div>
       <div class="bar-row"><div class="bar-label">DOORDASH</div><div class="bar them" style="width:60%">TAKES ~$600</div></div>
       <div class="bar-row"><div class="bar-label">UBER EATS</div><div class="bar them" style="width:50%">TAKES ~$500</div></div>
       <div class="bar-row"><div class="bar-label">NOSH</div><div class="bar us" style="width:12%">$50 FLAT</div></div>
@@ -186,15 +197,15 @@ h1 span { color:var(--orange); }
           </select>
         </div>
         <div class="form-row">
-          <label>CURRENTLY DRIVE FOR</label>
-          <select name="currentlyOn">
-            <option value="">Select one</option>
-            <option value="DoorDash">DoorDash</option>
-            <option value="UberEats">UberEats</option>
-            <option value="Both">Both</option>
-            <option value="Other">Other</option>
-            <option value="None">None / New to delivery</option>
-          </select>
+          <label>CURRENTLY DELIVER FOR (CHECK ALL THAT APPLY)</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="currentPlatforms" value="DoorDash"><span>DoorDash</span></label>
+            <label><input type="checkbox" name="currentPlatforms" value="UberEats"><span>Uber Eats</span></label>
+            <label><input type="checkbox" name="currentPlatforms" value="Grubhub"><span>Grubhub</span></label>
+            <label><input type="checkbox" name="currentPlatforms" value="Instacart"><span>Instacart</span></label>
+            <label><input type="checkbox" name="currentPlatforms" value="Other"><span>Other</span></label>
+            <label><input type="checkbox" name="currentPlatforms" value="None"><span>None / New to delivery</span></label>
+          </div>
         </div>
         <button type="submit" class="submit-btn">JOIN THE WAITLIST →</button>
         <div id="driverFormMessage"></div>
@@ -203,6 +214,7 @@ h1 span { color:var(--orange); }
     <p class="cta-note">LAUNCHING IN BUSHWICK · NO UPFRONT COST</p>
   </div>
 
+  <!-- RESTAURANT PANEL -->
   <div class="panel" id="panel-restaurant">
     <div class="props">
       <div class="prop">
@@ -229,7 +241,7 @@ h1 span { color:var(--orange); }
     </div>
 
     <div class="compare">
-      <div class="compare-title mono">ON $5K/MONTH IN ORDERS</div>
+      <div class="compare-title">ON $5K/MONTH IN ORDERS</div>
       <div class="bar-row"><div class="bar-label">DOORDASH</div><div class="bar them" style="width:60%">TAKES ~$1,500</div></div>
       <div class="bar-row"><div class="bar-label">UBER EATS</div><div class="bar them" style="width:50%">TAKES ~$1,250</div></div>
       <div class="bar-row"><div class="bar-label">NOSH</div><div class="bar us" style="width:5%">$50</div></div>
@@ -263,15 +275,16 @@ h1 span { color:var(--orange); }
           <input type="text" name="cuisine" placeholder="Mexican, Pizza, Korean, etc." required>
         </div>
         <div class="form-row">
-          <label>CURRENTLY ON DELIVERY APPS?</label>
-          <select name="currentlyOn">
-            <option value="">Select one</option>
-            <option value="DoorDash only">DoorDash only</option>
-            <option value="UberEats only">UberEats only</option>
-            <option value="DoorDash and UberEats">DoorDash and UberEats</option>
-            <option value="Other">Other</option>
-            <option value="None">None / New to delivery</option>
-          </select>
+          <label>CURRENTLY ON (CHECK ALL THAT APPLY)</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="currentPlatforms" value="DoorDash"><span>DoorDash</span></label>
+            <label><input type="checkbox" name="currentPlatforms" value="UberEats"><span>Uber Eats</span></label>
+            <label><input type="checkbox" name="currentPlatforms" value="Grubhub"><span>Grubhub</span></label>
+            <label><input type="checkbox" name="currentPlatforms" value="ChowNow"><span>ChowNow</span></label>
+            <label><input type="checkbox" name="currentPlatforms" value="Toast"><span>Toast</span></label>
+            <label><input type="checkbox" name="currentPlatforms" value="Other"><span>Other</span></label>
+            <label><input type="checkbox" name="currentPlatforms" value="None"><span>None / New to delivery</span></label>
+          </div>
         </div>
         <button type="submit" class="submit-btn">JOIN THE WAITLIST →</button>
         <div id="restaurantFormMessage"></div>
@@ -315,52 +328,64 @@ h1 span { color:var(--orange); }
 </footer>
 
 <script>
-const BACKEND_URL = "https://nosh-backend-production-b238.up.railway.app";
+var BACKEND_URL = "https://nosh-backend-production-b238.up.railway.app";
 
 function switchTab(tab) {
-  document.getElementById('tab-driver').classList.toggle('active', tab === 'driver');
-  document.getElementById('tab-restaurant').classList.toggle('active', tab === 'restaurant');
-  document.getElementById('panel-driver').classList.toggle('active', tab === 'driver');
-  document.getElementById('panel-restaurant').classList.toggle('active', tab === 'restaurant');
+  document.getElementById('tab-driver').className = 'toggle-btn' + (tab === 'driver' ? ' active' : '');
+  document.getElementById('tab-restaurant').className = 'toggle-btn' + (tab === 'restaurant' ? ' active' : '');
+  document.getElementById('panel-driver').className = 'panel' + (tab === 'driver' ? ' active' : '');
+  document.getElementById('panel-restaurant').className = 'panel' + (tab === 'restaurant' ? ' active' : '');
 }
 
-async function submitForm(event, role) {
+function submitForm(event, role) {
   event.preventDefault();
-  const form = event.target;
-  const submitBtn = form.querySelector('.submit-btn');
-  const messageDiv = document.getElementById(role + 'FormMessage');
-  
-  const formData = new FormData(form);
-  const data = { role };
-  formData.forEach((value, key) => { data[key] = value; });
-  
+  var form = event.target;
+  var submitBtn = form.querySelector('.submit-btn');
+  var messageDiv = document.getElementById(role + 'FormMessage');
+
+  // Gather form data
+  var data = { role: role };
+  var inputs = form.querySelectorAll('input[type="text"], input[type="tel"], input[type="email"], select');
+  for (var i = 0; i < inputs.length; i++) {
+    if (inputs[i].name && inputs[i].value) {
+      data[inputs[i].name] = inputs[i].value;
+    }
+  }
+
+  // Gather checkboxes
+  var checked = form.querySelectorAll('input[name="currentPlatforms"]:checked');
+  var platforms = [];
+  for (var j = 0; j < checked.length; j++) {
+    platforms.push(checked[j].value);
+  }
+  data.currentlyOn = platforms.join(', ');
+
   submitBtn.disabled = true;
   submitBtn.textContent = "SUBMITTING...";
   messageDiv.innerHTML = "";
-  
-  try {
-    const response = await fetch(BACKEND_URL + "/api/waitlist/signup", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    
-    const result = await response.json();
-    
-    if (response.ok) {
-      messageDiv.innerHTML = '<div class="form-message success">✓ ' + (result.message || "You're on the list! We'll be in touch.") + '</div>';
+
+  fetch(BACKEND_URL + "/api/waitlist/signup", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  })
+  .then(function(response) { return response.json().then(function(d) { return { ok: response.ok, data: d }; }); })
+  .then(function(result) {
+    if (result.ok) {
+      messageDiv.innerHTML = '<div class="form-message success">✓ ' + (result.data.message || "You're on the list! We'll be in touch.") + '</div>';
       form.reset();
       submitBtn.textContent = "JOINED ✓";
     } else {
-      messageDiv.innerHTML = '<div class="form-message error">' + (result.error || "Something went wrong. Please try again.") + '</div>';
+      messageDiv.innerHTML = '<div class="form-message error">' + (result.data.error || "Something went wrong. Please try again.") + '</div>';
       submitBtn.disabled = false;
       submitBtn.textContent = "JOIN THE WAITLIST →";
     }
-  } catch (err) {
-    messageDiv.innerHTML = '<div class="form-message error">Couldn\'t connect. Please try again or email hello@noshtheapp.com</div>';
+  })
+  .catch(function() {
+    messageDiv.innerHTML = '<div class="form-message error">Could not connect. Please try again or email hello@noshtheapp.com</div>';
     submitBtn.disabled = false;
     submitBtn.textContent = "JOIN THE WAITLIST →";
-  }
+  });
 }
 </script>
 </body>
