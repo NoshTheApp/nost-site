@@ -12,162 +12,156 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   background: #0C0C0C;
-  color: #E8E8E8;
+  color: #F5EFE0;
   font-family: 'DM Sans', -apple-system, sans-serif;
   line-height: 1.6;
   min-height: 100vh;
-  padding: 40px 24px;
+  padding: 48px 40px 80px 40px;
 }
-.container { max-width: 560px; margin: 0 auto; }
-.logo {
+.container { max-width: 820px; margin: 0 auto; }
+.logo-wrap { margin-bottom: 60px; }
+.logo-emoji { font-size: 28px; display: block; margin-bottom: 4px; }
+.logo-text {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 900;
-  font-size: 28px;
-  letter-spacing: 0.02em;
+  font-size: 14px;
+  letter-spacing: 0.3em;
   color: #FF6A1A;
-  margin-bottom: 48px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.logo-dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #FF6A1A;
 }
 h1 {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 900;
-  font-size: 56px;
-  line-height: 1.0;
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
-  color: #fff;
+  font-size: 92px;
+  line-height: 0.95;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  color: #F5EFE0;
 }
-h1 .orange { color: #FF6A1A; }
+h1 .orange { color: #FF6A1A; display: block; }
 .subtitle {
-  font-size: 17px;
-  color: #A8A8A8;
-  margin-bottom: 28px;
+  font-size: 20px;
+  color: #A8A39A;
+  margin-bottom: 48px;
+  max-width: 620px;
   line-height: 1.5;
 }
-.pitch-box {
-  background: rgba(255, 106, 26, 0.08);
-  border: 1px solid rgba(255, 106, 26, 0.3);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 36px;
+.role-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 56px;
 }
-.pitch-box .headline {
-  font-size: 15px;
-  font-weight: 700;
-  color: #FF6A1A;
-  margin-bottom: 8px;
-  letter-spacing: -0.01em;
-}
-.pitch-box .detail {
-  font-size: 14px;
-  color: #C8C8C8;
-  line-height: 1.55;
-}
-.comparison {
-  margin-bottom: 36px;
-}
-.row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 0;
-  border-bottom: 1px solid #222;
-  font-size: 14px;
-}
-.row:last-child { border-bottom: none; }
-.row .label { color: #888; }
-.row .value { color: #fff; font-weight: 500; }
-.row .value.nosh { color: #FF6A1A; }
-.toggle-group {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 28px;
-}
-.toggle-btn {
-  flex: 1;
-  padding: 12px;
-  background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 8px;
-  color: #888;
-  font-family: inherit;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+.role-btn {
+  background: transparent;
+  border: 2px solid #333;
+  border-radius: 4px;
+  padding: 20px 12px;
+  color: #A8A39A;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
-.toggle-btn.active {
-  background: #FF6A1A;
+.role-btn .ico { font-size: 22px; }
+.role-btn:hover { border-color: #555; color: #F5EFE0; }
+.role-btn.active {
   border-color: #FF6A1A;
-  color: #0C0C0C;
+  background: rgba(255, 106, 26, 0.08);
+  color: #FF6A1A;
 }
-.role-section { display: none; }
-.role-section.active { display: block; }
-.form {
+.features {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  margin-bottom: 24px;
+  gap: 16px;
+  margin-bottom: 56px;
 }
-.form label {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+.feature {
+  background: #15120E;
+  border: 1px solid #2A2520;
+  border-radius: 6px;
+  padding: 24px 28px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.feature .ico {
+  font-size: 32px;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+.feature-text h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #888;
+  color: #F5EFE0;
+  margin-bottom: 8px;
+}
+.feature-text p {
+  font-size: 15px;
+  color: #A8A39A;
+  line-height: 1.5;
+}
+.feature-text .highlight { color: #FF6A1A; font-weight: 500; }
+.form-section { margin-bottom: 40px; }
+.form-header {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #F5EFE0;
+  margin-bottom: 8px;
+}
+.form-sub { color: #A8A39A; font-size: 15px; margin-bottom: 24px; }
+.form { display: flex; flex-direction: column; gap: 14px; }
+.form label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #A8A39A;
   margin-bottom: -6px;
 }
 .form input, .form select {
-  background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 14px 16px;
-  color: #fff;
+  background: #15120E;
+  border: 1px solid #2A2520;
+  border-radius: 4px;
+  padding: 16px 18px;
+  color: #F5EFE0;
   font-family: inherit;
   font-size: 15px;
   transition: border-color 0.2s;
 }
-.form input:focus, .form select:focus {
-  outline: none;
-  border-color: #FF6A1A;
-}
-.form .checkbox-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 4px;
-}
+.form input:focus, .form select:focus { outline: none; border-color: #FF6A1A; }
+.form .checkbox-group { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
 .form .checkbox-row {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 8px;
+  gap: 12px;
+  padding: 14px 18px;
+  background: #15120E;
+  border: 1px solid #2A2520;
+  border-radius: 4px;
   cursor: pointer;
+  transition: border-color 0.2s;
 }
-.form .checkbox-row:hover { border-color: #555; }
-.form .checkbox-row input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  accent-color: #FF6A1A;
-  cursor: pointer;
-}
+.form .checkbox-row:hover { border-color: #3a3430; }
+.form .checkbox-row input[type="checkbox"] { width: 18px; height: 18px; accent-color: #FF6A1A; cursor: pointer; }
 .form .checkbox-row label {
   font-size: 14px;
-  color: #E8E8E8;
+  color: #F5EFE0;
   margin: 0;
   text-transform: none;
   letter-spacing: normal;
@@ -179,129 +173,202 @@ h1 .orange { color: #FF6A1A; }
   background: #FF6A1A;
   color: #0C0C0C;
   border: none;
-  border-radius: 8px;
-  padding: 16px;
+  border-radius: 4px;
+  padding: 20px;
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 900;
-  font-size: 18px;
-  letter-spacing: 0.04em;
+  font-size: 20px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   cursor: pointer;
   transition: background 0.2s;
+  margin-top: 8px;
 }
 .submit-btn:hover:not(:disabled) { background: #FF8040; }
-.submit-btn:disabled {
-  background: #555;
-  color: #999;
-  cursor: not-allowed;
-}
+.submit-btn:disabled { background: #444; color: #888; cursor: not-allowed; }
 .error-msg {
   background: rgba(255, 68, 68, 0.1);
-  border: 1px solid #ff4444;
+  border: 1px solid #552222;
   color: #ff6666;
-  padding: 12px 16px;
-  border-radius: 8px;
+  padding: 14px 18px;
+  border-radius: 4px;
   font-size: 14px;
   margin-bottom: 16px;
   display: none;
 }
 .error-msg.show { display: block; }
-.success-state {
-  text-align: center;
-  padding: 40px 20px;
-  display: none;
-}
+.role-section { display: none; }
+.role-section.active { display: block; }
+.success-state { text-align: center; padding: 40px 20px; display: none; }
 .success-state.show { display: block; }
-.success-state .check {
-  font-size: 56px;
-  margin-bottom: 16px;
-}
+.success-state .check { font-size: 64px; margin-bottom: 24px; }
 .success-state h2 {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 900;
-  font-size: 32px;
+  font-size: 44px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: #FF6A1A;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
-.success-state p {
-  font-size: 15px;
-  color: #C8C8C8;
-  max-width: 360px;
-  margin: 0 auto;
-}
+.success-state p { font-size: 16px; color: #A8A39A; max-width: 420px; margin: 0 auto; line-height: 1.6; }
 .footer {
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid #222;
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid #2A2520;
   color: #666;
-  font-size: 12px;
+  font-size: 13px;
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.7;
 }
-.footer a { color: #888; text-decoration: none; margin: 0 8px; }
+.footer a {
+  color: #888;
+  text-decoration: none;
+  margin: 0 10px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
 .footer a:hover { color: #FF6A1A; }
-.footer .legal-line { margin-top: 8px; }
-
-@media (max-width: 500px) {
-  h1 { font-size: 44px; }
-  body { padding: 24px 16px; }
+.footer .legal-line { margin-top: 12px; font-size: 12px; }
+@media (max-width: 680px) {
+  body { padding: 32px 20px 60px 20px; }
+  h1 { font-size: 56px; }
+  .subtitle { font-size: 17px; }
+  .role-toggle { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 <div class="container">
 
-<div class="logo">
-<span class="logo-dot"></span>
-NOSH
+<div class="logo-wrap">
+<span class="logo-emoji">🍴</span>
+<span class="logo-text">NOSH</span>
 </div>
 
-<h1>Pay nothing<br>until Nosh<br><span class="orange">earns you $500.</span></h1>
+<h1>LOWER PRICES.<br><span class="orange">BETTER DRIVER PAY.</span>SAME GREAT FOOD.</h1>
 
-<p class="subtitle">A fair-pay delivery platform launching in Bushwick, Brooklyn. Lower prices for customers. Better pay for drivers. Simple subscription for restaurants.</p>
+<p class="subtitle">A new food delivery platform launching in Bushwick. Fair for restaurants. Fair for drivers. Fair prices for you.</p>
 
-<div class="pitch-box">
-<div class="headline">The deal</div>
-<div class="detail">
-$0 monthly fee until you've earned $500 through Nosh. After that, $50/month deducted from earnings. DoorDash and Uber Eats take 15–30% of every order — forever.
-</div>
-</div>
-
-<div class="comparison">
-<div class="row">
-<span class="label">DoorDash commission</span>
-<span class="value">15–30% of every order</span>
-</div>
-<div class="row">
-<span class="label">Uber Eats commission</span>
-<span class="value">15–30% of every order</span>
-</div>
-<div class="row">
-<span class="label">Nosh</span>
-<span class="value nosh">$0 until $500 earned · $50/mo after</span>
-</div>
-</div>
-
-<div class="toggle-group">
-<button class="toggle-btn active" data-role="driver">I'm a driver</button>
-<button class="toggle-btn" data-role="restaurant">I'm a restaurant</button>
+<div class="role-toggle">
+<button class="role-btn active" data-role="customer"><span class="ico">🍕</span> I'M HUNGRY</button>
+<button class="role-btn" data-role="driver"><span class="ico">🛵</span> I'M A DRIVER</button>
+<button class="role-btn" data-role="restaurant"><span class="ico">🍽️</span> I'M A RESTAURANT</button>
 </div>
 
 <div class="error-msg" id="error-msg"></div>
 
-<!-- DRIVER FORM -->
-<div class="role-section active" id="section-driver">
+<!-- CUSTOMER SECTION -->
+<div class="role-section active" id="section-customer">
+
+<div class="features">
+<div class="feature">
+<span class="ico">💸</span>
+<div class="feature-text">
+<h3>NO DELIVERY FEES. NO SERVICE FEES.</h3>
+<p>You pay menu price + tax + tip. That's it. DoorDash and Uber Eats bake their <span class="highlight">15-30% cut</span> into inflated menu prices on top of all their fees. Nosh doesn't.</p>
+</div>
+</div>
+
+<div class="feature">
+<span class="ico">🏪</span>
+<div class="feature-text">
+<h3>SUPPORT YOUR LOCAL SPOTS</h3>
+<p>Your favorite Bushwick restaurants keep <span class="highlight">the money you spend</span> instead of handing a third of it to DoorDash. Same food, fairer system.</p>
+</div>
+</div>
+
+<div class="feature">
+<span class="ico">🛵</span>
+<div class="feature-text">
+<h3>YOUR DRIVER GETS PAID</h3>
+<p>Drivers keep <span class="highlight">100% of tips and fares</span> after their monthly subscription. They're not underpaid and rushing. Better service for you.</p>
+</div>
+</div>
+
+<div class="feature">
+<span class="ico">🚴</span>
+<div class="feature-text">
+<h3>BUSHWICK FIRST</h3>
+<p>We're launching in one neighborhood, doing it right, and expanding from there. Built by someone who lives here.</p>
+</div>
+</div>
+</div>
+
+<div class="form-section">
+<div class="form-header">Join the Waitlist — Customers</div>
+<div class="form-sub">We'll text you when Nosh launches in your neighborhood.</div>
+<form class="form" id="form-customer">
+<label for="c-name">Your name</label>
+<input type="text" id="c-name" required>
+<label for="c-phone">Phone number</label>
+<input type="tel" id="c-phone" placeholder="(555) 555-5555" required>
+<label for="c-email">Email (optional)</label>
+<input type="email" id="c-email" placeholder="you@example.com">
+<label for="c-neighborhood">Neighborhood</label>
+<input type="text" id="c-neighborhood" placeholder="Bushwick, Bed-Stuy, Ridgewood…" required>
+<label>Currently order from</label>
+<div class="checkbox-group">
+<div class="checkbox-row"><input type="checkbox" id="c-dd" value="DoorDash"><label for="c-dd">DoorDash</label></div>
+<div class="checkbox-row"><input type="checkbox" id="c-ue" value="Uber Eats"><label for="c-ue">Uber Eats</label></div>
+<div class="checkbox-row"><input type="checkbox" id="c-gh" value="Grubhub"><label for="c-gh">Grubhub</label></div>
+<div class="checkbox-row"><input type="checkbox" id="c-none" value="None"><label for="c-none">I mostly cook / pick up myself</label></div>
+</div>
+<button type="submit" class="submit-btn">Join the Waitlist</button>
+</form>
+</div>
+</div>
+
+<!-- DRIVER SECTION -->
+<div class="role-section" id="section-driver">
+
+<div class="features">
+<div class="feature">
+<span class="ico">💰</span>
+<div class="feature-text">
+<h3>PAY NOTHING UNTIL NOSH EARNS YOU $500</h3>
+<p>No monthly fee until you've earned <span class="highlight">$500 in gross earnings</span> through Nosh. Once you hit the threshold, <span class="highlight">$50/month</span> deducted from your earnings. That's it.</p>
+</div>
+</div>
+
+<div class="feature">
+<span class="ico">🧾</span>
+<div class="feature-text">
+<h3>NO PERCENTAGE. EVER.</h3>
+<p>DoorDash and Uber Eats take <span class="highlight">15-30%</span> of every order. Nosh is a flat monthly fee. The more you earn, the less it costs as a percentage.</p>
+</div>
+</div>
+
+<div class="feature">
+<span class="ico">🔁</span>
+<div class="feature-text">
+<h3>KEEP USING OTHER PLATFORMS</h3>
+<p>Nosh isn't a replacement — it's an addition. Keep using DoorDash, Uber Eats, or Grubhub alongside Nosh. More orders, better economics.</p>
+</div>
+</div>
+
+<div class="feature">
+<span class="ico">🚴</span>
+<div class="feature-text">
+<h3>BUSHWICK FIRST</h3>
+<p>We're launching in one neighborhood, doing it right, and expanding from there. Built by someone who lives here.</p>
+</div>
+</div>
+</div>
+<div class="form-section">
+<div class="form-header">Sign Up — Drivers</div>
+<div class="form-sub">We'll text you when we're ready to onboard you.</div>
 <form class="form" id="form-driver">
 <label for="d-name">Your name</label>
 <input type="text" id="d-name" required>
-
 <label for="d-phone">Phone number</label>
 <input type="tel" id="d-phone" placeholder="(555) 555-5555" required>
-
 <label for="d-neighborhood">Neighborhood</label>
 <input type="text" id="d-neighborhood" placeholder="Bushwick, Bed-Stuy, Ridgewood…" required>
-
-<label for="d-vehicle">Vehicle type</label>
+<label for="d-vehicle">Vehicle</label>
 <select id="d-vehicle" required>
 <option value="">Select one</option>
 <option value="bike">Bike</option>
@@ -309,61 +376,91 @@ $0 monthly fee until you've earned $500 through Nosh. After that, $50/month dedu
 <option value="car">Car</option>
 <option value="scooter">Scooter</option>
 </select>
-
-<label>Currently deliver for (check all that apply)</label>
+<label>Currently deliver for</label>
 <div class="checkbox-group">
 <div class="checkbox-row"><input type="checkbox" id="d-dd" value="DoorDash"><label for="d-dd">DoorDash</label></div>
 <div class="checkbox-row"><input type="checkbox" id="d-ue" value="Uber Eats"><label for="d-ue">Uber Eats</label></div>
 <div class="checkbox-row"><input type="checkbox" id="d-gh" value="Grubhub"><label for="d-gh">Grubhub</label></div>
 <div class="checkbox-row"><input type="checkbox" id="d-none" value="None"><label for="d-none">Not delivering yet</label></div>
 </div>
-
-<button type="submit" class="submit-btn">Join the waitlist</button>
+<button type="submit" class="submit-btn">Join the Waitlist</button>
 </form>
 </div>
+</div>
 
-<!-- RESTAURANT FORM -->
 <div class="role-section" id="section-restaurant">
+
+<div class="features">
+<div class="feature">
+<span class="ico">💰</span>
+<div class="feature-text">
+<h3>PAY NOTHING UNTIL NOSH EARNS YOU $500</h3>
+<p>No monthly fee until you've earned <span class="highlight">$500 in gross sales</span> through Nosh. Once you hit the threshold, <span class="highlight">$50/month</span> deducted from your earnings. That's it.</p>
+</div>
+</div>
+
+<div class="feature">
+<span class="ico">🧾</span>
+<div class="feature-text">
+<h3>NO PERCENTAGE. EVER.</h3>
+<p>DoorDash and Uber Eats take <span class="highlight">15-30%</span> of every order. Nosh is a flat monthly fee. The more you sell, the less it costs as a percentage.</p>
+</div>
+</div>
+
+<div class="feature">
+<span class="ico">🔁</span>
+<div class="feature-text">
+<h3>KEEP USING OTHER PLATFORMS</h3>
+<p>Nosh isn't a replacement — it's an addition. Keep DoorDash, Uber Eats, and Grubhub. Add Nosh as the fair-price option for your loyal customers.</p>
+</div>
+</div>
+
+<div class="feature">
+<span class="ico">🚴</span>
+<div class="feature-text">
+<h3>BUSHWICK FIRST</h3>
+<p>We're launching in one neighborhood, doing it right, and expanding from there. Built by someone who lives here.</p>
+</div>
+</div>
+</div>
+
+<div class="form-section">
+<div class="form-header">Sign Up — Restaurants</div>
+<div class="form-sub">We'll text you when we're ready to onboard you.</div>
 <form class="form" id="form-restaurant">
 <label for="r-restaurant">Restaurant name</label>
 <input type="text" id="r-restaurant" required>
-
 <label for="r-name">Your name</label>
 <input type="text" id="r-name" required>
-
 <label for="r-phone">Phone number</label>
 <input type="tel" id="r-phone" placeholder="(555) 555-5555" required>
-
 <label for="r-address">Address</label>
 <input type="text" id="r-address" placeholder="Street, city, zip" required>
-
-<label for="r-cuisine">Cuisine type</label>
-<input type="text" id="r-cuisine" placeholder="Pizza, Mexican, Thai, etc." required>
-
-<label>Currently on delivery apps (check all that apply)</label>
+<label for="r-cuisine">Cuisine</label>
+<input type="text" id="r-cuisine" placeholder="Pizza, Mexican, Thai…" required>
+<label>Currently on delivery apps</label>
 <div class="checkbox-group">
 <div class="checkbox-row"><input type="checkbox" id="r-dd" value="DoorDash"><label for="r-dd">DoorDash</label></div>
 <div class="checkbox-row"><input type="checkbox" id="r-ue" value="Uber Eats"><label for="r-ue">Uber Eats</label></div>
 <div class="checkbox-row"><input type="checkbox" id="r-gh" value="Grubhub"><label for="r-gh">Grubhub</label></div>
 <div class="checkbox-row"><input type="checkbox" id="r-none" value="None"><label for="r-none">Not on any delivery app</label></div>
 </div>
-
-<button type="submit" class="submit-btn">Join the waitlist</button>
+<button type="submit" class="submit-btn">Join the Waitlist</button>
 </form>
 </div>
+</div>
 
-<!-- SUCCESS STATE -->
 <div class="success-state" id="success">
-<div class="check">✓</div>
+<div class="check">🎉</div>
 <h2>You're on the list</h2>
 <p>We'll text you when we're ready to onboard you in your neighborhood. Questions? Email <a href="mailto:hello@noshtheapp.com" style="color:#FF6A1A">hello@noshtheapp.com</a>.</p>
 </div>
 
 <div class="footer">
 <div>
-<a href="/privacy">Privacy</a>·
-<a href="/terms">Terms</a>·
-<a href="/support">Support</a>·
+<a href="/privacy">Privacy</a>
+<a href="/terms">Terms</a>
+<a href="/support">Support</a>
 <a href="mailto:hello@noshtheapp.com">Contact</a>
 </div>
 <div class="legal-line">Nosh is a brand of The Golden Bubbie LLC.</div>
@@ -374,10 +471,9 @@ $0 monthly fee until you've earned $500 through Nosh. After that, $50/month dedu
 <script>
 const API_URL = 'https://nosh-backend-production-b238.up.railway.app/api/waitlist/signup';
 
-// Toggle between driver/restaurant
-document.querySelectorAll('.toggle-btn').forEach(btn => {
+document.querySelectorAll('.role-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.role-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const role = btn.dataset.role;
     document.querySelectorAll('.role-section').forEach(s => s.classList.remove('active'));
@@ -391,15 +487,12 @@ function showError(msg) {
   e.textContent = msg;
   e.classList.add('show');
 }
-function hideError() {
-  document.getElementById('error-msg').classList.remove('show');
-}
+function hideError() { document.getElementById('error-msg').classList.remove('show'); }
 
 function showSuccess() {
   document.querySelectorAll('.role-section').forEach(s => s.classList.remove('active'));
-  document.querySelector('.toggle-group').style.display = 'none';
-  document.querySelector('.comparison').style.display = 'none';
-  document.querySelector('.pitch-box').style.display = 'none';
+  document.querySelector('.role-toggle').style.display = 'none';
+  document.querySelectorAll('.features').forEach(f => f.style.display = 'none');
   document.getElementById('success').classList.add('show');
 }
 
@@ -408,7 +501,31 @@ function getChecked(ids) {
             .map(id => document.getElementById(id).value).join(', ');
 }
 
-// Driver form
+document.getElementById('form-customer').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  hideError();
+  const btn = e.target.querySelector('.submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Submitting…';
+  const payload = {
+    name: document.getElementById('c-name').value,
+    phone: document.getElementById('c-phone').value,
+    email: document.getElementById('c-email').value,
+    role: 'customer',
+    neighborhood: document.getElementById('c-neighborhood').value,
+    currentPlatforms: getChecked(['c-dd', 'c-ue', 'c-gh', 'c-none']),
+  };
+  try {
+    const res = await fetch(API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+    if (!res.ok) throw new Error('Signup failed');
+    showSuccess();
+  } catch (err) {
+    showError('Could not connect. Please try again or email hello@noshtheapp.com');
+    btn.disabled = false;
+    btn.textContent = 'Join the Waitlist';
+  }
+});
+
 document.getElementById('form-driver').addEventListener('submit', async (e) => {
   e.preventDefault();
   hideError();
@@ -424,21 +541,16 @@ document.getElementById('form-driver').addEventListener('submit', async (e) => {
     currentPlatforms: getChecked(['d-dd', 'd-ue', 'd-gh', 'd-none']),
   };
   try {
-    const res = await fetch(API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
+    const res = await fetch(API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
     if (!res.ok) throw new Error('Signup failed');
     showSuccess();
   } catch (err) {
     showError('Could not connect. Please try again or email hello@noshtheapp.com');
     btn.disabled = false;
-    btn.textContent = 'Join the waitlist';
+    btn.textContent = 'Join the Waitlist';
   }
 });
 
-// Restaurant form
 document.getElementById('form-restaurant').addEventListener('submit', async (e) => {
   e.preventDefault();
   hideError();
@@ -455,20 +567,15 @@ document.getElementById('form-restaurant').addEventListener('submit', async (e) 
     currentPlatforms: getChecked(['r-dd', 'r-ue', 'r-gh', 'r-none']),
   };
   try {
-    const res = await fetch(API_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
+    const res = await fetch(API_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
     if (!res.ok) throw new Error('Signup failed');
     showSuccess();
   } catch (err) {
     showError('Could not connect. Please try again or email hello@noshtheapp.com');
     btn.disabled = false;
-    btn.textContent = 'Join the waitlist';
+    btn.textContent = 'Join the Waitlist';
   }
 });
 </script>
-
 </body>
 </html>
