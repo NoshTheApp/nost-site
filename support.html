@@ -9,114 +9,27 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  background: #0C0C0C;
-  color: #E8E8E8;
-  font-family: 'DM Sans', -apple-system, sans-serif;
-  line-height: 1.7;
-  padding: 40px 24px;
-}
+body { background: #0C0C0C; color: #E8E8E8; font-family: 'DM Sans', -apple-system, sans-serif; line-height: 1.7; padding: 40px 24px; }
 .container { max-width: 720px; margin: 0 auto; }
-.back {
-  color: #FF6A1A;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  display: inline-block;
-  margin-bottom: 32px;
-}
+.back { color: #FF6A1A; text-decoration: none; font-size: 14px; font-weight: 500; display: inline-block; margin-bottom: 32px; }
 .back:hover { text-decoration: underline; }
-h1 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 48px;
-  letter-spacing: -0.02em;
-  margin-bottom: 8px;
-  color: #fff;
-}
-.subtitle {
-  color: #888;
-  font-size: 16px;
-  margin-bottom: 40px;
-}
-h2 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-  margin-top: 40px;
-  margin-bottom: 16px;
-  color: #FF6A1A;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-p, li {
-  font-size: 15px;
-  color: #C8C8C8;
-  margin-bottom: 12px;
-}
+h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 48px; letter-spacing: -0.02em; margin-bottom: 8px; color: #fff; }
+.subtitle { color: #888; font-size: 16px; margin-bottom: 40px; }
+h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; margin-top: 40px; margin-bottom: 16px; color: #FF6A1A; letter-spacing: 0.02em; text-transform: uppercase; }
+p, li { font-size: 15px; color: #C8C8C8; margin-bottom: 12px; }
 ul { margin-left: 24px; margin-bottom: 16px; }
 a { color: #FF6A1A; }
-.contact-box {
-  background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 28px;
-  margin: 24px 0 40px 0;
-}
-.contact-box .label {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #888;
-  margin-bottom: 8px;
-  font-weight: 500;
-}
-.contact-box .email {
-  font-size: 22px;
-  font-weight: 700;
-  color: #FF6A1A;
-  text-decoration: none;
-  display: block;
-  margin-bottom: 6px;
-}
-.contact-box .hours {
-  font-size: 14px;
-  color: #999;
-}
-.emergency {
-  background: rgba(255, 68, 68, 0.1);
-  border-left: 3px solid #ff4444;
-  padding: 16px 20px;
-  margin: 24px 0;
-  font-size: 14px;
-}
-.emergency strong {
-  color: #ff6666;
-  font-weight: 700;
-}
-.faq-item {
-  border-bottom: 1px solid #222;
-  padding: 20px 0;
-}
+.contact-box { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 28px; margin: 24px 0 40px 0; }
+.contact-box .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 8px; font-weight: 500; }
+.contact-box .email { font-size: 22px; font-weight: 700; color: #FF6A1A; text-decoration: none; display: block; margin-bottom: 6px; }
+.contact-box .hours { font-size: 14px; color: #999; }
+.emergency { background: rgba(255, 68, 68, 0.1); border-left: 3px solid #ff4444; padding: 16px 20px; margin: 24px 0; font-size: 14px; }
+.emergency strong { color: #ff6666; font-weight: 700; }
+.faq-item { border-bottom: 1px solid #222; padding: 20px 0; }
 .faq-item:last-child { border-bottom: none; }
-.faq-q {
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 8px;
-}
-.faq-a {
-  font-size: 15px;
-  color: #C8C8C8;
-}
-.footer {
-  margin-top: 60px;
-  padding-top: 24px;
-  border-top: 1px solid #333;
-  color: #666;
-  font-size: 13px;
-  text-align: center;
-}
+.faq-q { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.faq-a { font-size: 15px; color: #C8C8C8; }
+.footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid #333; color: #666; font-size: 13px; text-align: center; }
 </style>
 </head>
 <body>
@@ -151,12 +64,22 @@ For immediate safety concerns related to a Nosh order, use the emergency button 
 
 <div class="faq-item">
 <div class="faq-q">How much does Nosh cost for restaurants and drivers?</div>
-<div class="faq-a">$50/month flat subscription, first month free. The fee is deducted from your earnings, not billed separately. DoorDash and Uber Eats take 15-30% commission on every order; Nosh doesn't.</div>
+<div class="faq-a">$0 until you've earned $500 through Nosh. Once you hit the $500 threshold, a $50/month subscription fee is deducted from your subsequent earnings. DoorDash and Uber Eats take 15-30% of every order — forever.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">What does "earned $500 through Nosh" mean?</div>
+<div class="faq-a">It means the cumulative gross earnings (before platform fees) you've received through Nosh orders since joining. Once your lifetime Nosh earnings cross $500, your subscription activates on your next payout cycle.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">After my subscription activates, how does the monthly fee work?</div>
+<div class="faq-a">Each month, the first $50 of your earnings pays the platform fee. After $50 is covered for that month, 100% of your remaining earnings are paid out to you. The balance resets on the 1st of each month.</div>
 </div>
 
 <div class="faq-item">
 <div class="faq-q">Is there a delivery fee for customers?</div>
-<div class="faq-a">Customers pay the menu price plus tax and an optional tip. A small platform service fee may apply in the future; we'll always be transparent about any fees at checkout.</div>
+<div class="faq-a">Customers pay the menu price plus tax and an optional tip. A small platform service fee may apply in the future; we'll always be transparent about any fees at checkout before the order is placed.</div>
 </div>
 
 <div class="faq-item">

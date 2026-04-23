@@ -9,75 +9,19 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Barlow+Condensed:wght@700;900&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  background: #0C0C0C;
-  color: #E8E8E8;
-  font-family: 'DM Sans', -apple-system, sans-serif;
-  line-height: 1.7;
-  padding: 40px 24px;
-}
+body { background: #0C0C0C; color: #E8E8E8; font-family: 'DM Sans', -apple-system, sans-serif; line-height: 1.7; padding: 40px 24px; }
 .container { max-width: 720px; margin: 0 auto; }
-.back {
-  color: #FF6A1A;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  display: inline-block;
-  margin-bottom: 32px;
-}
+.back { color: #FF6A1A; text-decoration: none; font-size: 14px; font-weight: 500; display: inline-block; margin-bottom: 32px; }
 .back:hover { text-decoration: underline; }
-h1 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 48px;
-  letter-spacing: -0.02em;
-  margin-bottom: 8px;
-  color: #fff;
-}
-.updated {
-  color: #888;
-  font-size: 14px;
-  margin-bottom: 40px;
-}
-h2 {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-  margin-top: 40px;
-  margin-bottom: 12px;
-  color: #FF6A1A;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-h3 {
-  font-size: 16px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 8px;
-  color: #fff;
-}
-p, li {
-  font-size: 15px;
-  color: #C8C8C8;
-  margin-bottom: 12px;
-}
+h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 48px; letter-spacing: -0.02em; margin-bottom: 8px; color: #fff; }
+.updated { color: #888; font-size: 14px; margin-bottom: 40px; }
+h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 24px; margin-top: 40px; margin-bottom: 12px; color: #FF6A1A; letter-spacing: 0.02em; text-transform: uppercase; }
+h3 { font-size: 16px; font-weight: 700; margin-top: 20px; margin-bottom: 8px; color: #fff; }
+p, li { font-size: 15px; color: #C8C8C8; margin-bottom: 12px; }
 ul { margin-left: 24px; margin-bottom: 16px; }
 a { color: #FF6A1A; }
-.notice {
-  background: #1a1a1a;
-  border-left: 3px solid #FF6A1A;
-  padding: 16px 20px;
-  margin: 20px 0;
-  font-size: 14px;
-}
-.footer {
-  margin-top: 60px;
-  padding-top: 24px;
-  border-top: 1px solid #333;
-  color: #666;
-  font-size: 13px;
-  text-align: center;
-}
+.notice { background: #1a1a1a; border-left: 3px solid #FF6A1A; padding: 16px 20px; margin: 20px 0; font-size: 14px; }
+.footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid #333; color: #666; font-size: 13px; text-align: center; }
 </style>
 </head>
 <body>
@@ -107,17 +51,29 @@ These terms are a draft pending attorney review. Continued use of Nosh after the
 </ul>
 
 <h2>4. Subscription and Fees</h2>
-<p>Restaurants and drivers pay a monthly subscription to access the platform. The first month is free. After the first month, a platform fee is deducted from earnings until the monthly subscription amount is met, after which remaining earnings are paid out in full.</p>
-<p>Platform fee details:</p>
-<ul>
-<li>First month: free for restaurants and drivers</li>
-<li>Subsequent months: $50/month, deducted from order earnings</li>
-<li>Customers may be charged a small service fee per order (currently $0, subject to change with notice)</li>
-</ul>
-<p>Fees may change with at least 30 days' notice. Continued use of the Service after a fee change constitutes acceptance.</p>
 
-<h2>5. Orders and Payments</h2>
-<p>Payments are processed by Stripe. Customers are charged when the order is placed. Restaurants and drivers receive payouts according to the payout schedule described in the app. Refunds for cancelled or failed orders are handled on a case-by-case basis following our cancellation policy.</p>
+<h3>Threshold-Based Activation</h3>
+<p>Restaurants and drivers pay no monthly fee until they have earned a threshold amount through Nosh. The current Activation Threshold is $500 in gross earnings. Until the Activation Threshold is reached, 100% of earnings are paid to the user, subject to payment processor fees.</p>
+
+<h3>Monthly Subscription After Activation</h3>
+<p>Once a user reaches the Activation Threshold, a monthly subscription fee applies. The current subscription amount is $50 per month, deducted from subsequent earnings rather than billed separately. In any given month:</p>
+<ul>
+<li>The subscription amount is deducted from the user's earnings until the $50 is covered</li>
+<li>After the $50 is covered, 100% of remaining earnings for that month are paid to the user</li>
+<li>On the 1st of each month, the subscription balance resets</li>
+</ul>
+
+<h3>Changes to Thresholds and Fees</h3>
+<p>We may adjust the Activation Threshold and subscription amount with at least 30 days' notice. Continued use of the Service after a change takes effect constitutes acceptance.</p>
+
+<h3>Customer Fees</h3>
+<p>Customers pay the menu price listed by the restaurant, applicable taxes, and any optional tip. A small platform service fee may apply in the future; any such fee will be clearly disclosed at checkout before the order is placed.</p>
+
+<h3>Payment Processing</h3>
+<p>All payments are processed by Stripe. Payment processor fees may be deducted from payouts. Nosh does not store full payment card numbers.</p>
+
+<h2>5. Orders and Payouts</h2>
+<p>Customers are charged when the order is placed. Restaurants and drivers receive payouts according to the payout schedule described in the app. Refunds for cancelled or failed orders are handled on a case-by-case basis following our cancellation policy.</p>
 
 <h2>6. Driver Independent Contractor Status</h2>
 <p>Drivers on the Nosh platform are independent contractors, not employees of Nosh. Drivers control when, where, and how they accept deliveries. Nosh does not provide vehicles, insurance, or benefits. Drivers are responsible for their own taxes, insurance, and compliance with local regulations.</p>
